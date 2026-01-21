@@ -1,36 +1,368 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dr. Tanzeel Sultan Rana</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tanzeel Sultan Rana | Academic Profile</title>
   <style>
-    body { font-family: Arial; max-width: 800px; margin: auto; }
-    h1 { color: #2c3e50; }
+    :root{
+      --text:#1f2937;
+      --muted:#4b5563;
+      --border:#e5e7eb;
+      --bg:#ffffff;
+      --pill:#f3f4f6;
+      --link:#0b5fff;
+    }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.5;
+    }
+    .wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+    header{
+      border-bottom:1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+    }
+    h1{ margin:0 0 6px; font-size: 30px; }
+    .headline{ margin:0; color:var(--muted); font-weight:600; }
+    .location{ margin:6px 0 0; color:var(--muted); }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 18px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    section{
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 14px 10px;
+      margin-bottom: 14px;
+    }
+    section h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      color:var(--muted);
+      font-size: 14px;
+    }
+    .pill{
+      display:inline-block;
+      background: var(--pill);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .item{ margin: 0 0 14px; }
+    .item:last-child{ margin-bottom: 0; }
+    .item h3{
+      margin:0;
+      font-size: 16px;
+    }
+    .item .sub{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    ul{ margin: 8px 0 0 18px; }
+    .small{ font-size: 13px; color: var(--muted); }
+    .tight p{ margin: 0 0 10px; }
+    .tight p:last-child{ margin-bottom: 0; }
+
+    footer{
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <h1>Tanzeel Sultan Rana</h1>
+      <p class="headline">PhD Candidate | Cybersecurity & AI</p>
+      <p class="location">Montreal, Quebec, Canada</p>
+      <div class="meta" style="margin-top:10px;">
+        <span>📞 <a href="tel:+15145163880">+1 514 516 3880</a></span>
+        <span>✉️ <a href="mailto:tanzeelsultanrana1@gmail.com">tanzeelsultanrana1@gmail.com</a></span>
+        <span>✉️ <a href="mailto:tanzeel-sultan.rana@etud.polymtl.ca">tanzeel-sultan.rana@etud.polymtl.ca</a></span>
+        <span>🔗 <a href="https://www.linkedin.com/in/tanzeel-sultan-rana-b928aa149" target="_blank" rel="noopener">LinkedIn</a></span>
+        <span>🧾 <a href="https://orcid.org/0000-0001-7139-536X" target="_blank" rel="noopener">ORCID</a></span>
+        <span>🌐 <a href="https://sites.google.com/view/tanzeelsultanrana" target="_blank" rel="noopener">Personal Site</a></span>
+      </div>
+    </header>
 
-<h1>Dr. Tanzeel Sultan Rana</h1>
-<p><b>PhD Researcher | Cybersecurity | Access Control | Insider Threats</b></p>
+    <div class="grid">
+      <!-- LEFT COLUMN -->
+      <div>
+        <section class="tight">
+          <h2>Summary</h2>
+          <p>
+            Welcome to my LinkedIn! I’m a PhD candidate in Computer Engineering at Polytechnique Montréal,
+            with a strong interest in cybersecurity and AI-driven access control. My work focuses on making
+            security systems more adaptive and intelligent, particularly for detecting and mitigating insider threats.
+          </p>
+          <p>
+            I explore how machine learning, behavioral analysis, and deception techniques in access control can help
+            systems dynamically adjust decisions, identify risky patterns early, and protect sensitive data without
+            disrupting legitimate users.
+          </p>
+          <p>
+            I’m passionate about building practical, human-aware security solutions and enjoy collaborating with
+            researchers and professionals working at the intersection of AI and cybersecurity.
+          </p>
+          <p>
+            Always open to connecting, exchanging ideas, and exploring smarter approaches to security.
+          </p>
+        </section>
 
-<h2>About Me</h2>
-<p>
-I am a PhD researcher working on behavior-aware and adaptive access control
-for insider threat mitigation.
-</p>
+        <section>
+          <h2>Experience</h2>
 
-<h2>Research Interests</h2>
-<ul>
-  <li>Insider Threat Detection</li>
-  <li>Attribute-Based Access Control (ABAC)</li>
-  <li>Behavioral Security Modeling</li>
-  <li>Deception-based Defense</li>
-</ul>
+          <div class="item">
+            <h3>Polytechnique Montréal</h3>
+            <p class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — January 2026 – Present</p>
+            <p class="sub">Course: INF6422E Advanced Concepts in Computer Security · Montreal, Quebec, Canada</p>
+            <ul>
+              <li>Delivered lab sessions focusing on advanced security topics using Python programming and Jupyter notebooks.</li>
+              <li>Supported students in understanding complex cybersecurity mechanisms, including access control, malware analysis, and secure system design.</li>
+              <li>Conducted in-lab debugging and code walkthroughs to enhance comprehension of advanced concepts.</li>
+              <li>Assisted in preparing, invigilating, and marking lab-based assessments to ensure academic integrity and fairness.</li>
+              <li>Collaborated with the professor to align lab content with lecture topics and improve student engagement.</li>
+            </ul>
+          </div>
 
-<h2>Publications</h2>
-<p>Coming soon</p>
+          <div class="item">
+            <h3>Polytechnique Montréal</h3>
+            <p class="sub"><b>Doctoral Candidate / Research Assistant</b> — January 2024 – Present</p>
+            <p class="sub">Montreal, Quebec, Canada</p>
+          </div>
 
-<h2>Contact</h2>
-<p>Email: tanzeel-sultan.rana@etud.polymtl.ca</p>
+          <div class="item">
+            <h3>Polytechnique Montréal</h3>
+            <p class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — August 2025 – December 2025</p>
+            <p class="sub">Course: INF6953QE Internet of Things Security · Montreal, Quebec, Canada</p>
+            <ul>
+              <li>Designed and developed practical lab exercises covering key IoT security topics including data encryption, machine learning, and federated learning.</li>
+              <li>Conducted hands-on lab sessions using Cisco Packet Tracer and Anaconda to help students apply theoretical concepts in a practical setting.</li>
+              <li>Provided technical guidance to students during lab work and clarified doubts related to network simulation and secure communication protocols.</li>
+              <li>Evaluated lab submissions and provided timely, constructive feedback aligned with academic standards.</li>
+              <li>Assisted in coordinating lab schedules and supported the course instructor in improving lab delivery.</li>
+            </ul>
+          </div>
 
+          <div class="item">
+            <h3>Polytechnique Montréal</h3>
+            <p class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — January 2025 – April 2025</p>
+            <p class="sub">Course: INF6422E Advanced Concepts in Computer Security · Montreal, Quebec, Canada</p>
+            <ul>
+              <li>Delivered lab sessions focusing on advanced security topics using Python programming and Jupyter notebooks.</li>
+              <li>Supported students in understanding complex cybersecurity mechanisms, including access control, malware analysis, and secure system design.</li>
+              <li>Conducted in-lab debugging and code walkthroughs to enhance comprehension of advanced concepts.</li>
+              <li>Assisted in preparing, invigilating, and marking lab-based assessments.</li>
+              <li>Collaborated with the professor to align lab content with lecture topics and improve student engagement.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Polytechnique Montréal</h3>
+            <p class="sub"><b>Exam Invigilator (TEER 13100)</b> — February 2025</p>
+            <p class="sub">Montreal, Quebec, Canada</p>
+            <ul>
+              <li>Prepared examination rooms, verified student identities, and monitored examinations to uphold integrity.</li>
+              <li>Managed timekeeping, announcements, and ensured secure collection/return of exam materials.</li>
+              <li>Reported incidents or irregularities to the examination coordinator or relevant authorities.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Polytechnique Montréal</h3>
+            <p class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — August 2024 – December 2024</p>
+            <p class="sub">Course: INF6953QE Internet of Things Security · Montreal, Quebec, Canada</p>
+            <ul>
+              <li>Designed and delivered hands-on labs using Cisco Packet Tracer and Anaconda.</li>
+              <li>Guided students on secure communication protocols and IoT security concepts.</li>
+              <li>Evaluated submissions and provided feedback aligned with academic standards.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Octans Digital (OD)</h3>
+            <p class="sub"><b>IT Specialist / DevOps Engineer (TEER 21231)</b> — January 2023 – January 2024 · Lahore, Pakistan</p>
+            <ul>
+              <li>Managed on-premises and public cloud infrastructure (UAT/Production), including AWS services and security optimization.</li>
+              <li>Built and maintained CI/CD pipelines and supported continuous deployment/GitOps workflows.</li>
+              <li>Deployed and managed Kubernetes clusters; integrated observability/monitoring (e.g., Prometheus, Grafana, Datadog).</li>
+              <li>Worked with Ansible and Terraform for infrastructure automation.</li>
+              <li>Participated in programming tasks using Java, Go, and Python.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>University of Management and Technology (UMT)</h3>
+            <p class="sub"><b>University Lecturer in Computer Science (TEER 41200)</b> — March 2022 – February 2023 · Lahore, Pakistan</p>
+            <ul>
+              <li>Taught Computer Networks, Data & File Structures, Software Engineering, Operating Systems, and Software Project Management.</li>
+              <li>Supervised undergraduate final-year projects in web development, networks, and machine learning.</li>
+              <li>Prepared and graded exams, labs, and reports; advised students academically and professionally.</li>
+              <li>Contributed to curriculum planning and faculty committees; handled administrative duties (BoS/BoF minutes, bibliographies).</li>
+            </ul>
+            <p class="small"><b>Courses (School of Professional Advancement):</b> XC360, XC365, XC430, XC445, XC465</p>
+          </div>
+
+          <div class="item">
+            <h3>Gerry's Visa</h3>
+            <p class="sub"><b>Information Technology Supervisor (TEER 22220)</b> — July 2021 – April 2022 · Lahore, Pakistan</p>
+            <p class="sub"><b>System Administrator (TEER 22220)</b> — December 2019 – August 2021</p>
+            <ul>
+              <li>Operated and maintained IT infrastructure; ensured business continuity, backups, and disaster recovery.</li>
+              <li>Troubleshot internal/external web applications; handled real-time network traffic issues.</li>
+              <li>Managed file servers, network deployments, hardware/software installation, and security monitoring.</li>
+              <li>Supervised junior staff and supported LAN/WAN users; maintained peripherals and biometrics devices.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Gerry's Visa</h3>
+            <p class="sub"><b>IT Support Executive (TEER 22221)</b> — May 2018 – November 2019 · Lahore, Pakistan</p>
+            <ul>
+              <li>Provided remote and onsite IT support; diagnosed and resolved technical issues for users.</li>
+              <li>Maintained problem/solution logs and trained users to reduce recurring issues.</li>
+              <li>Supported evaluation and adoption of new IT technologies.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Kollaage Concepts (Pvt) Ltd</h3>
+            <p class="sub"><b>Information Technology Network Support (TEER 22220)</b> — February 2018 – April 2018 · Lahore, Pakistan</p>
+            <ul>
+              <li>Supported LAN setup/maintenance, installation and troubleshooting of routers/switches/workstations.</li>
+              <li>Monitored network performance and provided first-level technical support to staff.</li>
+              <li>Documented procedures and created user guides; supported routine backups and security practices.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <div class="item">
+            <h3>Polytechnique Montréal</h3>
+            <p class="sub">Doctor of Philosophy (PhD), Cyber Security / Computer Engineering — January 2024 – December 2027</p>
+          </div>
+          <div class="item">
+            <h3>University of Management and Technology (UMT), Pakistan</h3>
+            <p class="sub">Master of Science (M.Phil), Information Technology — 2018 – 2020</p>
+          </div>
+          <div class="item">
+            <h3>Lahore Garrison University, Pakistan</h3>
+            <p class="sub">Bachelor of Science (BS), Computer Science — 2014 – 2018</p>
+          </div>
+          <div class="item">
+            <h3>Garrison Post Graduate College for Men, Lahore Cantt</h3>
+            <p class="sub">FSc, Pre-Engineering — 2012 – 2014</p>
+          </div>
+          <div class="item">
+            <h3>F.G Public School Shami Road Lahore Cantt</h3>
+            <p class="sub">Matric, Computer Science — 2010 – 2012</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+        <section>
+          <h2>Top Skills</h2>
+          <div class="meta" style="margin-top:6px;">
+            <span class="pill">Server Management (Windows, Linux)</span>
+            <span class="pill">LAN/WAN Administration</span>
+            <span class="pill">Web Application Troubleshooting</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Languages</h2>
+          <ul>
+            <li>English (Professional Working)</li>
+            <li>Urdu (Professional Working)</li>
+            <li>Punjabi (Professional Working)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Honors & Awards</h2>
+          <ul>
+            <li>University Doctoral Scholarship | Mitacs</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Certifications</h2>
+          <ul>
+            <li>Faculty Development Training</li>
+            <li>Freelancing</li>
+            <li>DevOps Training (Faculty Secondment Program)</li>
+            <li>Power BI for Beginners Introduction to Business</li>
+            <li>Command Line in Linux</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Publications</h2>
+          <ul>
+            <li>Static handwritten signature verification using convolution neural network</li>
+            <li>Introduction to open educational resources</li>
+            <li>Comparative Analysis of Breast Cancer Detection using Cutting-edge Machine Learning Algorithms (MLAs)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Research Focus</h2>
+          <div class="meta" style="margin-top:6px;">
+            <span class="pill">Cybersecurity</span>
+            <span class="pill">AI-driven Access Control</span>
+            <span class="pill">Insider Threats</span>
+            <span class="pill">Behavioral Analysis</span>
+            <span class="pill">Deception Techniques</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/tanzeel-sultan-rana-b928aa149" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+            <li><a href="https://orcid.org/0000-0001-7139-536X" target="_blank" rel="noopener">ORCID</a></li>
+            <li><a href="https://sites.google.com/view/tanzeelsultanrana" target="_blank" rel="noopener">Personal Website</a></li>
+          </ul>
+          <p class="small">Tip: Add your CV as <code>assets/CV.pdf</code> and link it here.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <div>Last updated: January 2026</div>
+      <div class="small">Content adapted from your LinkedIn PDF export. :contentReference[oaicite:1]{index=1}</div>
+    </footer>
+  </div>
 </body>
 </html>
