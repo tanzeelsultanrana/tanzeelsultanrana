@@ -4,340 +4,571 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tanzeel Sultan Rana | Academic Profile</title>
+  <meta name="description" content="Tanzeel Sultan Rana — PhD Candidate in Computer Engineering (Polytechnique Montréal). Cybersecurity, AI-driven access control, insider threats." />
   <style>
     :root{
-      --text:#1f2937;
-      --muted:#4b5563;
-      --border:#e5e7eb;
-      --bg:#ffffff;
-      --pill:#f3f4f6;
-      --link:#0b5fff;
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.085);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.60);
+      --border: rgba(255,255,255,.12);
+      --accent: #7c3aed;   /* purple */
+      --accent2: #06b6d4;  /* cyan */
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius: 16px;
     }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height:1.5;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,.25), transparent 55%),
+        radial-gradient(1000px 500px at 90% 0%, rgba(6,182,212,.20), transparent 60%),
+        radial-gradient(900px 500px at 70% 95%, rgba(124,58,237,.16), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
+
+    a{ color: inherit; text-decoration:none; }
+    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
     .wrap{
-      max-width: 920px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 28px 18px 60px;
-    }
-    header{
-      border-bottom:1px solid var(--border);
-      padding-bottom: 16px;
-      margin-bottom: 18px;
-    }
-    h1{ margin:0 0 6px; font-size: 30px; }
-    .headline{ margin:0; color:var(--muted); font-weight:600; }
-    .location{ margin:6px 0 0; color:var(--muted); }
-
-    a{ color:var(--link); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 18px;
-    }
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
+      padding: 18px 16px 70px;
     }
 
-    section{
+    /* Top bar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 18px rgba(124,58,237,.55);
+    }
+    nav{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .navlink{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .navlink:hover{
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255,255,255,.05);
+      text-decoration:none;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 16px;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 14px 10px;
-      margin-bottom: 14px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
-    section h2{
-      margin: 0 0 10px;
-      font-size: 18px;
+    .hero-inner{
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 1.4fr .9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      nav{ display:none; }
+    }
+
+    .title{
+      margin: 4px 0 6px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+    .subtitle{
+      margin:0;
+      color: var(--muted);
+      font-weight: 600;
     }
     .meta{
       display:flex;
-      flex-wrap: wrap;
-      gap: 8px 12px;
-      color:var(--muted);
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 12px;
+      color: var(--muted2);
       font-size: 14px;
     }
-    .pill{
-      display:inline-block;
-      background: var(--pill);
-      border: 1px solid var(--border);
-      padding: 4px 10px;
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
       border-radius: 999px;
-      font-size: 13px;
-      color: var(--text);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
     }
-    .item{ margin: 0 0 14px; }
-    .item:last-child{ margin-bottom: 0; }
-    .item h3{
+
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,.07);
+      text-decoration:none;
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+    }
+    .btn.primary:hover{ filter: brightness(1.05); }
+
+    /* Profile card */
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      padding: 14px;
+      height: 100%;
+    }
+    .profile{
+      display:flex;
+      gap: 12px;
+      align-items:center;
+    }
+    .avatar{
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(124,58,237,.25), rgba(6,182,212,.18)),
+        rgba(255,255,255,.03);
+      overflow:hidden;
+      flex: 0 0 auto;
+    }
+    .avatar img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .profile h3{
       margin:0;
       font-size: 16px;
     }
-    .item .sub{
+    .profile p{
       margin: 2px 0 0;
       color: var(--muted);
+      font-size: 13px;
+    }
+    .facts{
+      margin-top: 12px;
+      display:grid;
+      gap: 8px;
+      color: var(--muted2);
       font-size: 14px;
     }
+    .facts a{ color: var(--text); }
+    .facts .row{
+      display:flex;
+      justify-content: space-between;
+      gap: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+
+    /* Main layout */
+    .layout{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+    }
+
+    section.block{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+      margin-bottom: 16px;
+    }
+    section.block h2{
+      margin:0 0 10px;
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
+    .muted{ color: var(--muted); }
+
+    .pillbox{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .pill{
+      display:inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .item{ padding: 12px 12px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,.03); margin-bottom: 10px; }
+    .item:last-child{ margin-bottom: 0; }
+    .item h3{ margin:0; font-size: 15px; }
+    .sub{ margin: 2px 0 0; color: var(--muted); font-size: 13px; }
     ul{ margin: 8px 0 0 18px; }
-    .small{ font-size: 13px; color: var(--muted); }
-    .tight p{ margin: 0 0 10px; }
-    .tight p:last-child{ margin-bottom: 0; }
+    li{ color: rgba(255,255,255,.86); }
+
+    details{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      padding: 10px 12px;
+    }
+    details summary{
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+    }
+    details summary::-webkit-details-marker{ display:none; }
+    details .inside{ margin-top: 10px; }
 
     footer{
-      margin-top: 16px;
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
       color: var(--muted);
       font-size: 12px;
-      border-top: 1px solid var(--border);
-      padding-top: 12px;
+      text-align: center;
+    }
+    .small{ font-size: 12px; color: var(--muted2); }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 13px;
     }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <header>
-      <h1>Tanzeel Sultan Rana</h1>
-      <p class="headline">PhD Candidate | Cybersecurity & AI</p>
-      <p class="location">Montreal, Quebec, Canada</p>
-      <div class="meta" style="margin-top:10px;">
-        <span>✉️ <a href="mailto:tanzeelsultanrana1@gmail.com">tanzeelsultanrana1@gmail.com</a></span>
-        <span>✉️ <a href="mailto:tanzeel-sultan.rana@etud.polymtl.ca">tanzeel-sultan.rana@etud.polymtl.ca</a></span>
-        <span>🔗 <a href="https://www.linkedin.com/in/tanzeel-sultan-rana-b928aa149" target="_blank" rel="noopener">LinkedIn</a></span>
-        <span>🧾 <a href="https://orcid.org/0000-0001-7139-536X" target="_blank" rel="noopener">ORCID</a></span>
-        <span>🌐 <a href="https://sites.google.com/view/tanzeelsultanrana" target="_blank" rel="noopener">Personal Site</a></span>
-      </div>
-    </header>
 
-    <div class="grid">
-      <!-- LEFT COLUMN -->
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="dot"></span> Tanzeel Sultan Rana</div>
+      <nav aria-label="Primary">
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#experience">Experience</a>
+        <a class="navlink" href="#education">Education</a>
+        <a class="navlink" href="#publications">Publications</a>
+        <a class="navlink" href="#teaching">Teaching</a>
+        <a class="navlink" href="#skills">Skills</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1 class="title">Tanzeel Sultan Rana</h1>
+          <p class="subtitle">PhD Candidate | Cybersecurity & AI • Polytechnique Montréal</p>
+
+          <div class="meta">
+            <span class="chip">📍 Montreal, Quebec, Canada</span>
+            <span class="chip">🔬 Insider Threats</span>
+            <span class="chip">🛡️ ABAC & Adaptive Access Control</span>
+            <span class="chip">🤖 ML + Behavioral Security</span>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="assets/CV.pdf" target="_blank" rel="noopener">⬇️ Download CV</a>
+            <a class="btn" href="mailto:tanzeel-sultan.rana@etud.polymtl.ca">✉️ Email</a>
+            <a class="btn" href="https://scholar.google.com" target="_blank" rel="noopener">📚 Google Scholar</a>
+            <a class="btn" href="https://orcid.org/0000-0001-7139-536X" target="_blank" rel="noopener">🧾 ORCID</a>
+          </div>
+
+          <p class="small" style="margin-top:12px;">
+            This site highlights my research, teaching, and professional experience in cybersecurity and AI-driven access control.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="profile">
+            <div class="avatar" title="Add your photo at assets/profile.jpg">
+              <img src="assets/profile.jpg" alt="Profile photo (optional)" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <h3>Quick Profile</h3>
+              <p class="muted">PhD Candidate • Cybersecurity & AI</p>
+            </div>
+          </div>
+
+          <div class="facts">
+            <div class="row"><span>Polytechnique Montréal</span><span class="badge">PhD (2024–2027)</span></div>
+            <div class="row"><span>Focus</span><span class="badge">Insider Threat Mitigation</span></div>
+            <div class="row"><span>Method</span><span class="badge">Behavior + Context + Deception</span></div>
+            <div class="row"><span>LinkedIn</span><span><a href="https://www.linkedin.com/in/tanzeel-sultan-rana-b928aa149" target="_blank" rel="noopener">Open</a></span></div>
+            <div class="row"><span>Personal Site</span><span><a href="https://sites.google.com/view/tanzeelsultanrana" target="_blank" rel="noopener">Open</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="layout">
+      <!-- LEFT -->
       <div>
-        <section class="tight">
-          <h2>Summary</h2>
-          <p>
-            Welcome to my Website! I’m a PhD candidate in Computer Engineering at Polytechnique Montréal,
+        <section id="about" class="block">
+          <h2>About</h2>
+          <p class="muted">
+            Welcome to my website! I’m a PhD candidate in Computer Engineering at Polytechnique Montréal,
             with a strong interest in cybersecurity and AI-driven access control. My work focuses on making
             security systems more adaptive and intelligent, particularly for detecting and mitigating insider threats.
           </p>
-          <p>
+          <p class="muted">
             I explore how machine learning, behavioral analysis, and deception techniques in access control can help
             systems dynamically adjust decisions, identify risky patterns early, and protect sensitive data without
             disrupting legitimate users.
           </p>
-          <p>
+          <p class="muted">
             I’m passionate about building practical, human-aware security solutions and enjoy collaborating with
             researchers and professionals working at the intersection of AI and cybersecurity.
           </p>
-          <p>
-            Always open to connecting, exchanging ideas, and exploring smarter approaches to security.
-          </p>
         </section>
 
-        <section>
+        <section id="experience" class="block">
           <h2>Experience</h2>
 
+          <!-- Keep most important items visible -->
           <div class="item">
             <h3>Polytechnique Montréal</h3>
-            <p class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — January 2026 – Present</p>
-            <p class="sub">Course: INF6422E Advanced Concepts in Computer Security · Montreal, Quebec, Canada</p>
+            <div class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — Jan 2026 – Present</div>
+            <div class="sub">INF6422E Advanced Concepts in Computer Security · Montreal, QC</div>
             <ul>
-              <li>Delivered lab sessions focusing on advanced security topics using Python programming and Jupyter notebooks.</li>
-              <li>Supported students in understanding complex cybersecurity mechanisms, including access control, malware analysis, and secure system design.</li>
-              <li>Conducted in-lab debugging and code walkthroughs to enhance comprehension of advanced concepts.</li>
-              <li>Assisted in preparing, invigilating, and marking lab-based assessments to ensure academic integrity and fairness.</li>
-              <li>Collaborated with the professor to align lab content with lecture topics and improve student engagement.</li>
-            </ul>
-          </div>
-
-          <div class="item">
-            <h3>Polytechnique Montréal</h3>
-            <p class="sub"><b>Doctoral Candidate / Research Assistant</b> — January 2024 – Present</p>
-            <p class="sub">Montreal, Quebec, Canada</p>
-          </div>
-
-          <div class="item">
-            <h3>Polytechnique Montréal</h3>
-            <p class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — August 2025 – December 2025</p>
-            <p class="sub">Course: INF6953QE Internet of Things Security · Montreal, Quebec, Canada</p>
-            <ul>
-              <li>Designed and developed practical lab exercises covering key IoT security topics including data encryption, machine learning, and federated learning.</li>
-              <li>Conducted hands-on lab sessions using Cisco Packet Tracer and Anaconda to help students apply theoretical concepts in a practical setting.</li>
-              <li>Provided technical guidance to students during lab work and clarified doubts related to network simulation and secure communication protocols.</li>
-              <li>Evaluated lab submissions and provided timely, constructive feedback aligned with academic standards.</li>
-              <li>Assisted in coordinating lab schedules and supported the course instructor in improving lab delivery.</li>
+              <li>Delivered lab sessions using Python and Jupyter notebooks.</li>
+              <li>Supported students on access control, malware analysis, and secure system design.</li>
+              <li>Assisted with assessments and improved lab alignment with lectures.</li>
             </ul>
           </div>
 
           <div class="item">
             <h3>Polytechnique Montréal</h3>
-            <p class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — January 2025 – April 2025</p>
-            <p class="sub">Course: INF6422E Advanced Concepts in Computer Security · Montreal, Quebec, Canada</p>
-            <ul>
-              <li>Delivered lab sessions focusing on advanced security topics using Python programming and Jupyter notebooks.</li>
-              <li>Supported students in understanding complex cybersecurity mechanisms, including access control, malware analysis, and secure system design.</li>
-              <li>Conducted in-lab debugging and code walkthroughs to enhance comprehension of advanced concepts.</li>
-              <li>Assisted in preparing, invigilating, and marking lab-based assessments.</li>
-              <li>Collaborated with the professor to align lab content with lecture topics and improve student engagement.</li>
-            </ul>
+            <div class="sub"><b>Doctoral Candidate / Research Assistant</b> — Jan 2024 – Present</div>
+            <div class="sub">Montreal, Quebec, Canada</div>
           </div>
 
-          <div class="item">
-            <h3>Polytechnique Montréal</h3>
-            <p class="sub"><b>Exam Invigilator (TEER 13100)</b> — February 2025</p>
-            <p class="sub">Montreal, Quebec, Canada</p>
-            <ul>
-              <li>Prepared examination rooms, verified student identities, and monitored examinations to uphold integrity.</li>
-              <li>Managed timekeeping, announcements, and ensured secure collection/return of exam materials.</li>
-              <li>Reported incidents or irregularities to the examination coordinator or relevant authorities.</li>
-            </ul>
-          </div>
+          <!-- Collapsible: everything else -->
+          <details style="margin-top:12px;">
+            <summary>Show more experience</summary>
+            <div class="inside">
 
-          <div class="item">
-            <h3>Polytechnique Montréal</h3>
-            <p class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — August 2024 – December 2024</p>
-            <p class="sub">Course: INF6953QE Internet of Things Security · Montreal, Quebec, Canada</p>
-            <ul>
-              <li>Designed and delivered hands-on labs using Cisco Packet Tracer and Anaconda.</li>
-              <li>Guided students on secure communication protocols and IoT security concepts.</li>
-              <li>Evaluated submissions and provided feedback aligned with academic standards.</li>
-            </ul>
-          </div>
+              <div class="item">
+                <h3>Polytechnique Montréal</h3>
+                <div class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — Aug 2025 – Dec 2025</div>
+                <div class="sub">INF6953QE Internet of Things Security · Montreal, QC</div>
+                <ul>
+                  <li>Designed hands-on IoT security labs (encryption, ML, federated learning).</li>
+                  <li>Ran sessions using Cisco Packet Tracer and Anaconda.</li>
+                  <li>Evaluated lab submissions and provided feedback.</li>
+                </ul>
+              </div>
 
-          <div class="item">
-            <h3>Octans Digital (OD)</h3>
-            <p class="sub"><b>IT Specialist / DevOps Engineer (TEER 21231)</b> — January 2023 – January 2024 · Lahore, Pakistan</p>
-            <ul>
-              <li>Managed on-premises and public cloud infrastructure (UAT/Production), including AWS services and security optimization.</li>
-              <li>Built and maintained CI/CD pipelines and supported continuous deployment/GitOps workflows.</li>
-              <li>Deployed and managed Kubernetes clusters; integrated observability/monitoring (e.g., Prometheus, Grafana, Datadog).</li>
-              <li>Worked with Ansible and Terraform for infrastructure automation.</li>
-              <li>Participated in programming tasks using Java, Go, and Python.</li>
-            </ul>
-          </div>
+              <div class="item">
+                <h3>Polytechnique Montréal</h3>
+                <div class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — Jan 2025 – Apr 2025</div>
+                <div class="sub">INF6422E Advanced Concepts in Computer Security · Montreal, QC</div>
+                <ul>
+                  <li>Delivered labs using Python/Jupyter; supported debugging and concept mastery.</li>
+                </ul>
+              </div>
 
-          <div class="item">
-            <h3>University of Management and Technology (UMT)</h3>
-            <p class="sub"><b>University Lecturer in Computer Science (TEER 41200)</b> — March 2022 – February 2023 · Lahore, Pakistan</p>
-            <ul>
-              <li>Taught Computer Networks, Data & File Structures, Software Engineering, Operating Systems, and Software Project Management.</li>
-              <li>Supervised undergraduate final-year projects in web development, networks, and machine learning.</li>
-              <li>Prepared and graded exams, labs, and reports; advised students academically and professionally.</li>
-              <li>Contributed to curriculum planning and faculty committees; handled administrative duties (BoS/BoF minutes, bibliographies).</li>
-            </ul>
-            <p class="small"><b>Courses (School of Professional Advancement):</b> XC360, XC365, XC430, XC445, XC465</p>
-          </div>
+              <div class="item">
+                <h3>Polytechnique Montréal</h3>
+                <div class="sub"><b>Exam Invigilator (TEER 13100)</b> — Feb 2025</div>
+                <ul>
+                  <li>Maintained exam integrity and handled incident reporting.</li>
+                </ul>
+              </div>
 
-          <div class="item">
-            <h3>Gerry's Visa</h3>
-            <p class="sub"><b>Information Technology Supervisor (TEER 22220)</b> — July 2021 – April 2022 · Lahore, Pakistan</p>
-            <p class="sub"><b>System Administrator (TEER 22220)</b> — December 2019 – August 2021</p>
-            <ul>
-              <li>Operated and maintained IT infrastructure; ensured business continuity, backups, and disaster recovery.</li>
-              <li>Troubleshot internal/external web applications; handled real-time network traffic issues.</li>
-              <li>Managed file servers, network deployments, hardware/software installation, and security monitoring.</li>
-              <li>Supervised junior staff and supported LAN/WAN users; maintained peripherals and biometrics devices.</li>
-            </ul>
-          </div>
+              <div class="item">
+                <h3>Polytechnique Montréal</h3>
+                <div class="sub"><b>University Laboratory Assistant (TEER 41201)</b> — Aug 2024 – Dec 2024</div>
+                <div class="sub">INF6953QE Internet of Things Security · Montreal, QC</div>
+                <ul>
+                  <li>Designed and delivered hands-on labs; evaluated submissions.</li>
+                </ul>
+              </div>
 
-          <div class="item">
-            <h3>Gerry's Visa</h3>
-            <p class="sub"><b>IT Support Executive (TEER 22221)</b> — May 2018 – November 2019 · Lahore, Pakistan</p>
-            <ul>
-              <li>Provided remote and onsite IT support; diagnosed and resolved technical issues for users.</li>
-              <li>Maintained problem/solution logs and trained users to reduce recurring issues.</li>
-              <li>Supported evaluation and adoption of new IT technologies.</li>
-            </ul>
-          </div>
+              <div class="item">
+                <h3>Octans Digital (OD)</h3>
+                <div class="sub"><b>IT Specialist / DevOps Engineer (TEER 21231)</b> — Jan 2023 – Jan 2024 · Lahore, Pakistan</div>
+                <ul>
+                  <li>Managed AWS + on-prem infrastructure; improved security and reliability.</li>
+                  <li>Built CI/CD pipelines; deployed Kubernetes; enabled monitoring/observability.</li>
+                  <li>Automated infra with Terraform and Ansible; coded in Java/Go/Python.</li>
+                </ul>
+              </div>
 
-          <div class="item">
-            <h3>Kollaage Concepts (Pvt) Ltd</h3>
-            <p class="sub"><b>Information Technology Network Support (TEER 22220)</b> — February 2018 – April 2018 · Lahore, Pakistan</p>
-            <ul>
-              <li>Supported LAN setup/maintenance, installation and troubleshooting of routers/switches/workstations.</li>
-              <li>Monitored network performance and provided first-level technical support to staff.</li>
-              <li>Documented procedures and created user guides; supported routine backups and security practices.</li>
-            </ul>
-          </div>
+              <div class="item">
+                <h3>University of Management and Technology (UMT)</h3>
+                <div class="sub"><b>University Lecturer in Computer Science (TEER 41200)</b> — Mar 2022 – Feb 2023 · Lahore, Pakistan</div>
+                <ul>
+                  <li>Taught Computer Networks, Data Structures, SE, OS, and Project Management.</li>
+                  <li>Supervised final-year projects and graded assessments.</li>
+                </ul>
+                <div class="small"><b>Courses:</b> XC360, XC365, XC430, XC445, XC465</div>
+              </div>
+
+              <div class="item">
+                <h3>Gerry's Visa</h3>
+                <div class="sub"><b>IT Supervisor</b> — Jul 2021 – Apr 2022 · Lahore, Pakistan</div>
+                <div class="sub"><b>System Administrator</b> — Dec 2019 – Aug 2021</div>
+                <ul>
+                  <li>Operated IT infrastructure; managed DR/backups and security monitoring.</li>
+                  <li>Handled network traffic issues and application troubleshooting.</li>
+                </ul>
+              </div>
+
+              <div class="item">
+                <h3>Gerry's Visa</h3>
+                <div class="sub"><b>IT Support Executive</b> — May 2018 – Nov 2019 · Lahore, Pakistan</div>
+                <ul>
+                  <li>Provided onsite/remote support and user training; maintained logs.</li>
+                </ul>
+              </div>
+
+              <div class="item">
+                <h3>Kollaage Concepts (Pvt) Ltd</h3>
+                <div class="sub"><b>IT Network Support</b> — Feb 2018 – Apr 2018 · Lahore, Pakistan</div>
+                <ul>
+                  <li>Supported LAN setup, troubleshooting, and monitoring.</li>
+                </ul>
+              </div>
+
+            </div>
+          </details>
         </section>
 
-        <section>
+        <section id="education" class="block">
           <h2>Education</h2>
           <div class="item">
             <h3>Polytechnique Montréal</h3>
-            <p class="sub">Doctor of Philosophy (PhD), Cyber Security / Computer Engineering — January 2024 – December 2027</p>
+            <div class="sub">PhD, Cyber Security / Computer Engineering — Jan 2024 – Dec 2027</div>
           </div>
           <div class="item">
             <h3>University of Management and Technology (UMT), Pakistan</h3>
-            <p class="sub">Master of Science (M.Phil), Information Technology — 2018 – 2020</p>
+            <div class="sub">M.Phil, Information Technology — 2018 – 2020</div>
           </div>
           <div class="item">
             <h3>Lahore Garrison University, Pakistan</h3>
-            <p class="sub">Bachelor of Science (BS), Computer Science — 2014 – 2018</p>
+            <div class="sub">BS, Computer Science — 2014 – 2018</div>
+          </div>
+        </section>
+
+        <section id="publications" class="block">
+          <h2>Publications</h2>
+          <div class="item">
+            <h3>Static handwritten signature verification using convolution neural network</h3>
+            <div class="sub">Add venue/year/links (PDF, DOI) when available.</div>
           </div>
           <div class="item">
-            <h3>Garrison Post Graduate College for Men, Lahore Cantt</h3>
-            <p class="sub">FSc, Pre-Engineering — 2012 – 2014</p>
+            <h3>Introduction to open educational resources</h3>
+            <div class="sub">Add venue/year/links (PDF, DOI) when available.</div>
           </div>
           <div class="item">
-            <h3>F.G Public School Shami Road Lahore Cantt</h3>
-            <p class="sub">Matric, Computer Science — 2010 – 2012</p>
+            <h3>Comparative Analysis of Breast Cancer Detection using Cutting-edge ML Algorithms</h3>
+            <div class="sub">Add venue/year/links (PDF, DOI) when available.</div>
+          </div>
+          <div class="small">Tip: If you have Google Scholar, add the real link in the top buttons.</div>
+        </section>
+
+        <section id="teaching" class="block">
+          <h2>Teaching</h2>
+          <div class="item">
+            <h3>INF6422E — Advanced Concepts in Computer Security</h3>
+            <div class="sub">Polytechnique Montréal · Lab Assistant (2025, 2026)</div>
+          </div>
+          <div class="item">
+            <h3>INF6953QE — Internet of Things Security</h3>
+            <div class="sub">Polytechnique Montréal · Lab Assistant (2024, 2025)</div>
           </div>
         </section>
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- RIGHT -->
       <div>
-        <section>
-          <h2>Top Skills</h2>
-          <div class="meta" style="margin-top:6px;">
-            <span class="pill">Server Management (Windows, Linux)</span>
-            <span class="pill">LAN/WAN Administration</span>
-            <span class="pill">Web Application Troubleshooting</span>
-          </div>
-        </section>
-
-        <section>
-          <h2>Languages</h2>
-          <ul>
-            <li>English (Professional Working)</li>
-            <li>Urdu (Professional Working)</li>
-            <li>Punjabi (Professional Working)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Honors & Awards</h2>
-          <ul>
-            <li>University Doctoral Scholarship | Mitacs</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Certifications</h2>
-          <ul>
-            <li>Faculty Development Training</li>
-            <li>Freelancing</li>
-            <li>DevOps Training (Faculty Secondment Program)</li>
-            <li>Power BI for Beginners Introduction to Business</li>
-            <li>Command Line in Linux</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Publications</h2>
-          <ul>
-            <li>Static handwritten signature verification using convolution neural network</li>
-            <li>Introduction to open educational resources</li>
-            <li>Comparative Analysis of Breast Cancer Detection using Cutting-edge Machine Learning Algorithms (MLAs)</li>
-          </ul>
-        </section>
-
-        <section>
+        <section id="skills" class="block">
           <h2>Research Focus</h2>
-          <div class="meta" style="margin-top:6px;">
+          <div class="pillbox">
             <span class="pill">Cybersecurity</span>
             <span class="pill">AI-driven Access Control</span>
             <span class="pill">Insider Threats</span>
@@ -346,21 +577,65 @@
           </div>
         </section>
 
-        <section>
-          <h2>Quick Links</h2>
+        <section class="block">
+          <h2>Top Skills</h2>
+          <div class="pillbox">
+            <span class="pill">Server Management (Windows, Linux)</span>
+            <span class="pill">LAN/WAN Administration</span>
+            <span class="pill">Web Application Troubleshooting</span>
+            <span class="pill">DevOps & CI/CD</span>
+            <span class="pill">Kubernetes</span>
+            <span class="pill">Terraform / Ansible</span>
+          </div>
+        </section>
+
+        <section class="block">
+          <h2>Languages</h2>
           <ul>
-            <li><a href="https://www.linkedin.com/in/tanzeel-sultan-rana-b928aa149" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-            <li><a href="https://orcid.org/0000-0001-7139-536X" target="_blank" rel="noopener">ORCID</a></li>
-            <li><a href="https://sites.google.com/view/tanzeelsultanrana" target="_blank" rel="noopener">Personal Website</a></li>
+            <li>English (Professional Working)</li>
+            <li>Urdu (Professional Working)</li>
+            <li>Punjabi (Professional Working)</li>
           </ul>
-          <p class="small">Tip: Add your CV as <code>assets/CV.pdf</code> and link it here.</p>
+        </section>
+
+        <section class="block">
+          <h2>Honors & Awards</h2>
+          <ul>
+            <li>University Doctoral Scholarship | Mitacs</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>Certifications</h2>
+          <ul>
+            <li>Faculty Development Training</li>
+            <li>DevOps Training (Faculty Secondment Program)</li>
+            <li>Power BI for Beginners</li>
+            <li>Command Line in Linux</li>
+          </ul>
+        </section>
+
+        <section id="contact" class="block">
+          <h2>Contact</h2>
+          <div class="facts">
+            <div class="row"><span>Email (Poly)</span><span><a href="mailto:tanzeel-sultan.rana@etud.polymtl.ca">Send</a></span></div>
+            <div class="row"><span>Email (Gmail)</span><span><a href="mailto:tanzeelsultanrana1@gmail.com">Send</a></span></div>
+            <div class="row"><span>LinkedIn</span><span><a href="https://www.linkedin.com/in/tanzeel-sultan-rana-b928aa149" target="_blank" rel="noopener">Open</a></span></div>
+            <div class="row"><span>ORCID</span><span><a href="https://orcid.org/0000-0001-7139-536X" target="_blank" rel="noopener">Open</a></span></div>
+            <div class="row"><span>Personal Site</span><span><a href="https://sites.google.com/view/tanzeelsultanrana" target="_blank" rel="noopener">Open</a></span></div>
+          </div>
+          <p class="small" style="margin-top:10px;">If you add <code>assets/CV.pdf</code>, the “Download CV” button will work.</p>
         </section>
       </div>
     </div>
 
     <footer>
-      <div>Last updated: January 2026</div>
+      <div>© <span id="y"></span> Tanzeel Sultan Rana • Last updated: January 2026</div>
     </footer>
   </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
